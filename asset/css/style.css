@@ -1029,7 +1029,6 @@ header .meun-area .util-group .reserve {
   height: 340px;
 }
 .pleasure-area .content-group .pls-item .items {
-  display: block;
   width: 100%;
   height: 100%;
   padding: 0 20px;
@@ -1042,7 +1041,6 @@ header .meun-area .util-group .reserve {
   transition: all 0.3s linear;
 }
 .pleasure-area .content-group .pls-item .items .txt-wrap {
-  pointer-events: none;
   width: 100%;
   min-height: 200px;
   text-align: center;
@@ -1051,42 +1049,47 @@ header .meun-area .util-group .reserve {
   z-index: 10;
   transition: all 0.3s ease;
 }
+@media (max-width: 1024px) {
+  .pleasure-area .content-group .pls-item .items .txt-wrap {
+    width: 60%;
+    min-height: auto;
+  }
+}
 .pleasure-area .content-group .pls-item .items .txt-wrap.on {
   transform: translateY(-50%);
 }
 .pleasure-area .content-group .pls-item .items .txt-wrap.mob {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY(-20%);
 }
 .pleasure-area .content-group .pls-item .items .txt-wrap .tit {
   font-size: 40px;
   font-weight: 800;
 }
+@media (max-width: 1024px) {
+  .pleasure-area .content-group .pls-item .items .txt-wrap .tit {
+    font-size: 30px;
+  }
+}
 .pleasure-area .content-group .pls-item .items .txt-wrap .txt-off {
+  display: none;
+  visibility: hidden;
   opacity: 0;
   transition: all 0.5s ease;
 }
 .pleasure-area .content-group .pls-item .items .txt-wrap .txt-off.on {
   opacity: 1;
+  display: block;
+  visibility: visible;
 }
 .pleasure-area .content-group .pls-item .items .txt-wrap .txt-off.mob {
   opacity: 1;
+  display: block;
+  visibility: visible;
 }
 .pleasure-area .content-group .pls-item .items .txt-wrap .txt-off p {
   font-size: 18px;
   line-height: 1.5;
   margin-top: 40px;
-}
-@media (max-width: 1024px) {
-  .pleasure-area .content-group .pls-item .items .txt-wrap {
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0;
-  }
-  .pleasure-area .content-group .pls-item .items .txt-wrap .tit {
-    font-size: 25px;
-  }
 }
 .pleasure-area .content-group .pls-item .items .link-more {
   display: inline-block;
@@ -1098,9 +1101,11 @@ header .meun-area .util-group .reserve {
   border-radius: 50px;
   box-sizing: border-box;
   border: 1px solid #fff;
+  color: #fff;
+  display: none;
   opacity: 0;
+  visibility: hidden;
   z-index: 1;
-  transition: all ease;
 }
 .pleasure-area .content-group .pls-item .items .link-more:hover {
   color: #fff;
@@ -1127,6 +1132,13 @@ header .meun-area .util-group .reserve {
 }
 .pleasure-area .content-group .pls-item .items .link-more.on {
   opacity: 1;
+  display: block;
+  visibility: visible;
+}
+.pleasure-area .content-group .pls-item .items .link-more.mob {
+  opacity: 1;
+  display: block;
+  visibility: visible;
 }
 .pleasure-area .content-group .pls-item .items.on {
   filter: grayscale(0);
@@ -1166,16 +1178,16 @@ header .meun-area .util-group .reserve {
   height: 100%;
   transition: all 0.3s linear;
 }
-.pleasure-area .content-group .pls-item:first-child a {
+.pleasure-area .content-group .pls-item:first-child {
   background: url(../img/driving-pleasure01.jpg) no-repeat center/cover;
 }
-.pleasure-area .content-group .pls-item:nth-child(2) a {
+.pleasure-area .content-group .pls-item:nth-child(2) {
   background: url(../img/driving-pleasure02.jpg) no-repeat center/cover;
 }
-.pleasure-area .content-group .pls-item:nth-child(3) a {
+.pleasure-area .content-group .pls-item:nth-child(3) {
   background: url(../img/driving-pleasure03.jpg) no-repeat center/cover;
 }
-.pleasure-area .content-group .pls-item:last-child a {
+.pleasure-area .content-group .pls-item:last-child {
   background: url(../img/driving-pleasure04.jpg) no-repeat center/cover;
 }
 

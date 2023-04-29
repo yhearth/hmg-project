@@ -77,7 +77,6 @@
             overflow: hidden;
             img{position: absolute;}
             @include tablet {width: 39px; height: 39px;}
-
             &.prev img{
                 top: -100px;left: -900px;
                 @include tablet {
@@ -290,55 +289,52 @@
             }
             &.mob{height: 340px;}
             .items{
-                display: block;
                 width: 100%;height: 100%;
                 padding: 0 20px;box-sizing: border-box;
                 display: flex; flex-direction: column;align-items: center;justify-content: center;
                 filter:grayscale(100%);
                 transition: all .3s linear;
                 .txt-wrap{
-                    pointer-events: none;
                     width: 100%;min-height:200px;
-                    text-align: center;
-                    line-height: 1.2;color:#fff;
+                    text-align: center;line-height: 1.2;color:#fff;
                     z-index: 10;
                     transition: all .3s ease;
+                    @include tablet{width: 60%;min-height: auto;}
                     &.on{transform: translateY(-50%);}
-                    &.mob{ top: 50%;left: 50%;transform: translate(-50%, -50%);}
-                    .tit{font-size: 40px;font-weight: 800;}
+                    &.mob{transform: translateY(-20%)}
+                    .tit{font-size: 40px;font-weight: 800; @include tablet{font-size:30px;}}
                     .txt-off{
+                        display: none;
+                        visibility:hidden;
                         opacity: 0;
                         transition: all .5s ease;
-                        &.on{ opacity: 1;}
-                        &.mob{opacity: 1;}
+                        &.on{ opacity: 1;display: block;visibility: visible;}
+                        &.mob{opacity: 1;display: block;visibility: visible;}
                         p{
                             font-size: 18px;line-height: 1.5;
                             margin-top: 40px;
                         }
                     }
-                    @include tablet{
-                        left: 50%;transform: translateX(-50%);
-                        padding: 0;
-                        .tit{font-size: 25px;}
-                      }
                 }
                 .link-more{
                     @include linkMore;
-                    border:1px solid#fff;
-                    opacity: 0;z-index:1;
-                    transition: all  ease;
-                    &.on{ opacity: 1;}
+                    border:1px solid#fff;color:#fff;
+                    display: none;opacity: 0;visibility: hidden;
+                    z-index:1;
+                    &.on{ opacity: 1;display: block;visibility: visible;}
+                    &.mob{ opacity: 1;display: block;visibility: visible;}
                 }
+
                 &.on{
                     filter:grayscale(0);
                     &::before{ transform: rotate(180deg);}
                     &::after{ background: rgba(0,0,0,0)}
-                }
+                }//mouseenter
                 &.mob{
                     filter:grayscale(0);
                     &::before{ transform: rotate(180deg);}
                     &::after{ background: rgba(0,0,0,0)}
-                }
+                }//click
                 &::before{
                     content: '';
                     display: block;
@@ -356,10 +352,10 @@
                 }
 
             }
-            &:first-child a{background: url(../img/driving-pleasure01.jpg)no-repeat center / cover;}
-            &:nth-child(2) a{background: url(../img/driving-pleasure02.jpg) no-repeat center / cover;}
-            &:nth-child(3) a{background: url(../img/driving-pleasure03.jpg) no-repeat center / cover;}
-            &:last-child a{background: url(../img/driving-pleasure04.jpg)no-repeat center / cover;}
+            &:first-child{background: url(../img/driving-pleasure01.jpg)no-repeat center / cover;}
+            &:nth-child(2){background: url(../img/driving-pleasure02.jpg) no-repeat center / cover;}
+            &:nth-child(3){background: url(../img/driving-pleasure03.jpg) no-repeat center / cover;}
+            &:last-child{background: url(../img/driving-pleasure04.jpg)no-repeat center / cover;}
         }
 
     }

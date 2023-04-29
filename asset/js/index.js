@@ -9,7 +9,6 @@ console.log('HMG Web Site');
         scrollTrigger:{
             trigger:".visual-area",
             start:"top top",
-            //markers:true,
         },
         backgroundColor:"#000",
     })
@@ -244,13 +243,15 @@ if(matchMedia("screen and (max-width : 767px)").matches){ //moblie
     $('.slide_03 img').attr('src','asset/img/main-m-banner03.jpg');
     $('.slide_04 img').attr('src','asset/img/main-m-banner04.jpg');
     $('.visual-control img').attr('src','asset/img/ic-m-sprite.png');
+    plsItemTarget.on('click',plsMobAni());
+    plsItemTarget.off('mouseenter',plsTabAni());
 }else if(matchMedia("screen and (max-width : 1024px)").matches){//tablet
     $('.visual-control img').attr('src','asset/img/ic-m-sprite.png');
     //플래이져 코드 변경
     plsItemTarget.on('click',plsMobAni());
-    plsItemTarget.off('mouseover',plsTabAni());
+    plsItemTarget.off('mouseenter',plsTabAni());
 }else{//desktop
-    plsItemTarget.on('mouseover',plsTabAni());
+    plsItemTarget.on('mouseenter',plsTabAni());
     plsItemTarget.off('click',plsMobAni());
 }  
 }).resize();
