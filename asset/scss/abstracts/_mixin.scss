@@ -1,0 +1,53 @@
+
+$mobile: 767px;
+$tablet: 1024px;
+$desktop: 1440px;
+
+@mixin mobile{ 
+        @media (max-width: $mobile){@content;} 
+}
+    
+@mixin tablet{ 
+        @media (max-width: $tablet){ @content;} 
+}
+@mixin desktop{ 
+        @media (max-width: $desktop){@content;} 
+}  
+
+@mixin linkMore {
+        display: inline-block;
+        width: 170px;height: 46px;
+        line-height: 42px;
+        font-size: 18px;text-align: center;
+        border-radius: 50px;
+        box-sizing: border-box;
+        &:hover{
+                color:#fff;
+                border:1px solid #f25130;
+                background: linear-gradient(to right,#ff8933 0% ,#ea2e2e 100%);              
+        } 
+        @include desktop{
+                width: auto;height: auto;
+                font-size: 1.25vw;line-height: 1;
+                padding: 0.74em 1.7em 0.75em; 
+            }
+            @include tablet{
+                width: 121px;height: 33px;
+                font-size: 13px;line-height: 31px;
+                padding: 0;
+            }
+}
+
+// @mixin ic-news{
+//         content: '';
+//         display: block;
+//         width: 9px;height: 16px;
+//         vertical-align: middle;
+//         position: absolute;
+//         top: 50%;;left: 50%;transform: translate(-50%, -50%);
+// }
+
+
+
+
+

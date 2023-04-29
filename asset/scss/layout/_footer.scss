@@ -1,0 +1,232 @@
+
+.footer-area{
+    background-color: #000;
+    overflow: hidden;
+    .inner{
+        width: calc(100% - 160px);
+        border-bottom: 1px solid #444;
+        @include tablet {
+            width: 100%;height: auto;
+            padding: 20px;box-sizing: border-box;
+        }
+     }
+     .footer-top{
+        position: relative;
+        padding: 25px 0 ;
+        border-bottom: 1px solid gray;
+        color:#fff;
+        overflow: hidden;
+        @include tablet{
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 0px ;
+        }
+        .tit{
+            float: left;
+            position: relative;
+            width: 70px;
+            padding: 5px 0;box-sizing: border-box;
+            font-size: 18px;font-weight: 700;
+            z-index: 10;
+            margin-right: 20px;
+            @include tablet{
+               float: none;
+               margin-bottom: 20px;
+            }
+            a{display: inline-block;padding-right: 20px;}
+        }
+        .news-area{
+            float: left;
+            width: calc(100% - 180px);
+            padding: 5px 0;box-sizing: border-box;
+
+            @include tablet{
+                width: 100%;
+                position: absolute;top: 50%;left: 0;
+            }
+
+            .ctbox{
+                display: flex;
+                justify-content:space-between;
+                width: 100%;
+                padding: 0 40px;box-sizing:border-box;
+                @include tablet{padding:0;}
+                a{
+                    display: block;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    @include tablet{width: 100%;}
+                }
+            }
+
+        .swiper-pagination{
+            display: none;
+            position: relative;
+            width: auto;
+            padding: 20px 0;
+            @include tablet{
+                display: flex;align-items: center;
+            }
+        }
+        .swiper-pagination-bullet{
+            width: 20px;height: 2px;
+            background-color: #fff;
+            border-radius: 0;
+        }
+        .swiper-pagination-bullet-active{
+            width: 80px;
+        }
+        }
+        .news-nav{
+            float: right;
+            display: flex;
+            padding-top: 5px;box-sizing: border-box;
+            @include tablet{
+                display: none;
+            }
+            .btn{
+                position: relative;
+                display: inline-block;
+                width: 9px;height: 16px;
+                overflow: hidden;
+                img{position: absolute;}
+                &.prev img{
+                    top: 0;left: 0;
+                }
+                &.next img{
+                    top: 0;left: -57px;
+                }
+
+            }
+            .btns{
+                position: relative;
+                width: 8px;height: 14px;
+                margin:0 10px;
+                display: inline-block;
+                overflow: hidden;
+                img{position: absolute;}
+              .btn{
+                display: none;
+                &.on{display: block;}
+                &.stop img{
+                    top: -1px;left: -21px;
+                }
+                &.play img{
+                    top: -1px;left: -41px;
+                }
+              }
+            }
+            
+        }
+
+        
+
+     }
+     .footer-cont{
+        position: relative;
+        color:#999;
+        padding: 50px 0;
+            .notice-group{
+                display: inline-block;
+                li{
+                    float: left;
+                    padding: 0 12px;
+                    border-right: 1px solid #444;
+                    &:first-child{padding-left: 0;}
+                    @include tablet{font-size: 13px;}
+                }
+            }
+            .site-group{
+                position: absolute;
+                top: 50px;right: 0;
+                @include tablet{
+                    position: static;
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-top: 10px;
+    
+                }
+                .link-wrap{
+                    width: 100%;margin: 0 auto;
+                    padding: 0;
+                    select{
+                        width: 220px;height: 50px;
+                        border:1px solid #676767;
+                        padding: 5px 15px;
+                        line-height: 35px;
+                        background: none;
+                        color:#fff;
+                        font-size: 18px;
+                        @include tablet{
+                            width: calc(100% - 100px);
+                            font-size: 13px;
+                            padding: 5px 40px 5px 15px;
+                        }
+                    }
+                    .go-link{
+                        float:right;//자꾸 사이에 공간이 나와서 
+                        width: 100px;height: 50px;
+                        line-height: 50px;
+                        text-align: center;
+                        background-color: #fff;color:#222;
+                        margin: 0;
+                    }
+                    &::after{
+                        content: '';display: block;clear: both;
+                    }
+    
+                }
+    
+            }
+            .addr-group{
+                width: 80%;
+                margin-top: 25px;
+                @include desktop{
+                    width: calc(100% - 360px);
+                }
+                @include tablet{
+                    width: 100%;
+                    margin-top: 17px;
+                    font-size: 13px;
+                }
+                .addr-box{
+                    margin-top: 10px;
+                    font-size: 14px;line-height: 24px;
+                    overflow: hidden;//??
+                    @include tablet{
+                        margin-top: 10px;
+                        font-size: 13px;
+                    }
+                    &:first-child{margin-top: 0;}
+                    .company{
+                        float: left;
+                        width: 200px;
+                        font-size: 16px;color:#fff;
+                        @include tablet{
+                            float: none;
+                        }
+                    }
+                    .dec{
+                       width: calc(100% - 200px);
+                        display: flex;
+                        flex-wrap: wrap;
+                        span{margin-right: 20px;}
+                        @include mobile{width: 100%;}
+                    }
+                }
+            }
+            .corp-group{
+                margin-top: 24px;
+                font-size: 14px;color:#999;
+            }     
+        
+    
+
+     }
+
+}
+
+
+
+

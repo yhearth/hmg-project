@@ -1,0 +1,41 @@
+/*
+공통, 안되는것들
+display: none; 
+opacity: 0;
+visibility: hidden;
+
+position: absolute; 성능정하
+top: -9999px; 성능저하
+left: -9999px; 성능저하
+
+text-indent: -9999px; 성능저하
+width: 0;
+height: 0;
+
+*/
+
+body{
+    // min-width: 1026px;//tlqkf
+     position: relative; 
+     height: 100%;
+     color:#666;
+     //전반적인 텍스트 라인
+     font-size: 16px;
+     letter-spacing: -.6px;
+     line-height: 1;
+     word-break: keep-all;
+ }
+ 
+ 
+.blind{
+    position: absolute;   
+    width: 1px;height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+}
+
+
+ 
+
+
