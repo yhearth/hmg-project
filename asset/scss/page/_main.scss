@@ -290,27 +290,21 @@
             }
             &.mob{height: 340px;}
             .items{
-                display: block;//a
+                display: block;
                 width: 100%;height: 100%;
+                padding: 0 20px;box-sizing: border-box;
+                display: flex; flex-direction: column;align-items: center;justify-content: center;
                 filter:grayscale(100%);
-
                 transition: all .3s linear;
                 .txt-wrap{
-                    position: absolute;
-                    top: 50%;
-                    width: 100%;
+                    pointer-events: none;
+                    width: 100%;min-height:200px;
                     text-align: center;
-                    padding: 0 50px;box-sizing: border-box;
-
-                    text-align: center; vertical-align: middle;
-                    line-height: 1;
-                    color:#fff;
+                    line-height: 1.2;color:#fff;
                     z-index: 10;
                     transition: all .3s ease;
-                    &.on{
-                        transform: translateY(-50%);
-                    }
-                   &.mob{ top: 50%;left: 50%;transform: translate(-50%, -50%);}
+                    &.on{transform: translateY(-50%);}
+                    &.mob{ top: 50%;left: 50%;transform: translate(-50%, -50%);}
                     .tit{font-size: 40px;font-weight: 800;}
                     .txt-off{
                         opacity: 0;
@@ -322,20 +316,18 @@
                             margin-top: 40px;
                         }
                     }
-                    .link-more{
-                        margin-top: 40px;
-                        @include linkMore;
-                        border:1px solid#fff;
-                        opacity: 0;
-                        transition: all .1s .2s ease-in-out;
-                        &.on{ opacity: 1;}
-                        &.mob{opacity: 1;}
-                    }
                     @include tablet{
                         left: 50%;transform: translateX(-50%);
                         padding: 0;
                         .tit{font-size: 25px;}
                       }
+                }
+                .link-more{
+                    @include linkMore;
+                    border:1px solid#fff;
+                    opacity: 0;z-index:1;
+                    transition: all  ease;
+                    &.on{ opacity: 1;}
                 }
                 &.on{
                     filter:grayscale(0);

@@ -1032,19 +1032,21 @@ header .meun-area .util-group .reserve {
   display: block;
   width: 100%;
   height: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   filter: grayscale(100%);
   transition: all 0.3s linear;
 }
 .pleasure-area .content-group .pls-item .items .txt-wrap {
-  position: absolute;
-  top: 50%;
+  pointer-events: none;
   width: 100%;
+  min-height: 200px;
   text-align: center;
-  padding: 0 50px;
-  box-sizing: border-box;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 1;
+  line-height: 1.2;
   color: #fff;
   z-index: 10;
   transition: all 0.3s ease;
@@ -1076,8 +1078,17 @@ header .meun-area .util-group .reserve {
   line-height: 1.5;
   margin-top: 40px;
 }
-.pleasure-area .content-group .pls-item .items .txt-wrap .link-more {
-  margin-top: 40px;
+@media (max-width: 1024px) {
+  .pleasure-area .content-group .pls-item .items .txt-wrap {
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+  }
+  .pleasure-area .content-group .pls-item .items .txt-wrap .tit {
+    font-size: 25px;
+  }
+}
+.pleasure-area .content-group .pls-item .items .link-more {
   display: inline-block;
   width: 170px;
   height: 46px;
@@ -1088,15 +1099,16 @@ header .meun-area .util-group .reserve {
   box-sizing: border-box;
   border: 1px solid #fff;
   opacity: 0;
-  transition: all 0.1s 0.2s ease-in-out;
+  z-index: 1;
+  transition: all ease;
 }
-.pleasure-area .content-group .pls-item .items .txt-wrap .link-more:hover {
+.pleasure-area .content-group .pls-item .items .link-more:hover {
   color: #fff;
   border: 1px solid #f25130;
   background: linear-gradient(to right, #ff8933 0%, #ea2e2e 100%);
 }
 @media (max-width: 1440px) {
-  .pleasure-area .content-group .pls-item .items .txt-wrap .link-more {
+  .pleasure-area .content-group .pls-item .items .link-more {
     width: auto;
     height: auto;
     font-size: 1.25vw;
@@ -1105,7 +1117,7 @@ header .meun-area .util-group .reserve {
   }
 }
 @media (max-width: 1024px) {
-  .pleasure-area .content-group .pls-item .items .txt-wrap .link-more {
+  .pleasure-area .content-group .pls-item .items .link-more {
     width: 121px;
     height: 33px;
     font-size: 13px;
@@ -1113,21 +1125,8 @@ header .meun-area .util-group .reserve {
     padding: 0;
   }
 }
-.pleasure-area .content-group .pls-item .items .txt-wrap .link-more.on {
+.pleasure-area .content-group .pls-item .items .link-more.on {
   opacity: 1;
-}
-.pleasure-area .content-group .pls-item .items .txt-wrap .link-more.mob {
-  opacity: 1;
-}
-@media (max-width: 1024px) {
-  .pleasure-area .content-group .pls-item .items .txt-wrap {
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0;
-  }
-  .pleasure-area .content-group .pls-item .items .txt-wrap .tit {
-    font-size: 25px;
-  }
 }
 .pleasure-area .content-group .pls-item .items.on {
   filter: grayscale(0);
