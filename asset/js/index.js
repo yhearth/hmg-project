@@ -150,14 +150,14 @@ console.log('HMG Web Site');
         })
     }
     var plsTabAni = function(){
-         plsItemTarget.mouseover(function(){
+         plsItemTarget.mouseenter(function(){
                 $(this).find('.items').addClass('on');
                 $(this).find('.txt-wrap').addClass('on');
                 $(this).find('.txt-off').addClass('on');
                 $(this).find('.link-more').addClass('on');
 
             })
-            plsItemTarget.mouseout(function(){
+            plsItemTarget.mouseleave(function(){
                 $(this).find('.items').removeClass('on');
                 $(this).find('.txt-wrap').removeClass('on');
                 $(this).find('.txt-off').removeClass('on');
