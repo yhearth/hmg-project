@@ -1,33 +1,28 @@
 console.log('HMG Web Site');
 (function($){
-    // $(document).ready(function(){
-    //     $(window).resize(function(){location.reload();})
-    // });
 
 //header
-    gsap.to("header",0.3,{
-        scrollTrigger:{
-            trigger:".visual-area",
-            start:"top top",
-        },
-        backgroundColor:"#000",
-    })
+gsap.to("header",0.3,{
+    scrollTrigger:{
+        trigger:".visual-area",
+        start:"top top",
+    },
+    backgroundColor:"#000",
+})
 //slide animation
-    var visualSlide = new Swiper(".visual-area",{
-        navigation:{
-            prevEl:".visual-area .btn.prev",
-            nextEl:".visual-area .btn.next",
-        },
-        pagination:{
-            el:".swiper-pagination",
-        },
-        autoplay:{
-            delay:3000,
-            disableOnInteraction : false,
-        },
-    });
-
-
+var visualSlide = new Swiper(".visual-area",{
+    navigation:{
+        prevEl:".visual-area .btn.prev",
+        nextEl:".visual-area .btn.next",
+    },
+    pagination:{
+        el:".swiper-pagination",
+    },
+    autoplay:{
+        delay:3000,
+        disableOnInteraction : false,
+    },
+});
 //이미지 슬라이드 숫자 변경
    var slideCnt = $('.visual-area .swiper-slide').lenght;
    $('.state-bar .num').text(1);
@@ -98,7 +93,6 @@ console.log('HMG Web Site');
     })
 //Driving Pleasure
     plsItemTarget = $('.pls-item');
-
     ScrollTrigger.matchMedia({
         "(max-width : 1024px)": function(){
             gsap.set($('.pls-item'),{
@@ -119,7 +113,6 @@ console.log('HMG Web Site');
             });
         }
     })
-
     var plsMobAni = function(){
         plsItemTarget.click(function(e){
             e.preventDefault();
@@ -164,8 +157,6 @@ console.log('HMG Web Site');
             })
 
     }
-
-  
 // Hyundai N Festival
     gsap.fromTo('.festival-area img',{
         scale:2
@@ -178,8 +169,6 @@ console.log('HMG Web Site');
         },
         scale:1,
     })
-
-
 //sns
     $('.sns-item').mouseover(function(){
         $(this).find('.txt-wrap').addClass('on');
@@ -187,9 +176,6 @@ console.log('HMG Web Site');
     $('.sns-item').mouseout(function(){
         $(this).find('.txt-wrap').removeClass('on');
     })
-
-
-
 //footer
     var newsSlide = new Swiper ('.news-area',{
         slidesPerView:1,
@@ -206,15 +192,6 @@ console.log('HMG Web Site');
             disableOnInteraction:false,
         },
     });
-    // $(window).resize(function(e){
-    //     if(matchMedia("screen and (min-width : 1024px)").matches){
-    //          newsSlide = new Swiper ('.news-area',{
-    //             slidesPerView:2,
-    //         });
-    //     }else{
-            
-    //     }   
-    // }).resize();
   
     $('.footer-top .news-nav .btns').click(function(e){
         e.preventDefault();
@@ -230,7 +207,6 @@ console.log('HMG Web Site');
         }
         
      })
-
 
 function handleResize() {
     if (window.innerWidth < 768) {
@@ -256,6 +232,5 @@ function handleResize() {
     }
 }
 handleResize()
-
 
 })(jQuery);
