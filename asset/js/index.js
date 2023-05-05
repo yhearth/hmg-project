@@ -1,8 +1,8 @@
 console.log('HMG Web Site');
 (function($){
-    $(document).ready(function(){
-        $(window).resize(function(){location.reload();})
-    });
+    // $(document).ready(function(){
+    //     $(window).resize(function(){location.reload();})
+    // });
 
 //header
     gsap.to("header",0.3,{
