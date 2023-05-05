@@ -206,15 +206,15 @@ console.log('HMG Web Site');
             disableOnInteraction:false,
         },
     });
-    $(window).resize(function(e){
-        if(matchMedia("screen and (min-width : 1024px)").matches){
-             newsSlide = new Swiper ('.news-area',{
-                slidesPerView:2,
-            });
-        }else{
+    // $(window).resize(function(e){
+    //     if(matchMedia("screen and (min-width : 1024px)").matches){
+    //          newsSlide = new Swiper ('.news-area',{
+    //             slidesPerView:2,
+    //         });
+    //     }else{
             
-        }   
-    }).resize();
+    //     }   
+    // }).resize();
   
     $('.footer-top .news-nav .btns').click(function(e){
         e.preventDefault();
@@ -232,30 +232,30 @@ console.log('HMG Web Site');
      })
 
 
+function handleResize() {
+    if (window.innerWidth < 768) {
+        $('.slide_01 img').attr('src','asset/img/main-m-banner01.jpg');
+        $('.slide_02 img').attr('src','asset/img/main-m-banner02.jpg');
+        $('.slide_03 img').attr('src','asset/img/main-m-banner03.jpg');
+        $('.slide_04 img').attr('src','asset/img/main-m-banner04.jpg');
+        $('.visual-control img').attr('src','asset/img/ic-m-sprite.png');
+        plsItemTarget.on('click',plsMobAni());
+        plsItemTarget.off('mouseenter',plsTabAni());
+    }else if(window.innerWidth < 1024){
+        $('.visual-control img').attr('src','asset/img/ic-m-sprite.png');
+        //플래이져 코드 변경
+        plsItemTarget.on('click',plsMobAni());
+        plsItemTarget.off('mouseenter',plsTabAni());
+    }else{
+        plsItemTarget.on('mouseenter',plsTabAni());
+        plsItemTarget.off('click',plsMobAni());
 
-///반응형 코드 변경
-$(window).resize(function(e){
-console.log(window.innerWidth);
-if(matchMedia("screen and (max-width : 767px)").matches){ //moblie
-        //이미지 슬라이드 반응형 
-    $('.slide_01 img').attr('src','asset/img/main-m-banner01.jpg');
-    $('.slide_02 img').attr('src','asset/img/main-m-banner02.jpg');
-    $('.slide_03 img').attr('src','asset/img/main-m-banner03.jpg');
-    $('.slide_04 img').attr('src','asset/img/main-m-banner04.jpg');
-    $('.visual-control img').attr('src','asset/img/ic-m-sprite.png');
-    plsItemTarget.on('click',plsMobAni());
-    plsItemTarget.off('mouseenter',plsTabAni());
-}else if(matchMedia("screen and (max-width : 1024px)").matches){//tablet
-    $('.visual-control img').attr('src','asset/img/ic-m-sprite.png');
-    //플래이져 코드 변경
-    plsItemTarget.on('click',plsMobAni());
-    plsItemTarget.off('mouseenter',plsTabAni());
-}else{//desktop
-    plsItemTarget.on('mouseenter',plsTabAni());
-    plsItemTarget.off('click',plsMobAni());
-}  
-}).resize();
-
+        newsSlide = new Swiper ('.news-area',{
+            slidesPerView:2,
+        });
+    }
+}
+handleResize()
 
 
 })(jQuery);
